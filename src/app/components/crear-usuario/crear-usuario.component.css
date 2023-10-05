@@ -1,0 +1,23 @@
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.50rem 1rem;
+}
+
+/* Estilo para centrar la imagen horizontalmente */
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+/* Estilo para hacer la imagen más pequeña */
+.img-small {
+  width: 30%; /* Puedes ajustar el porcentaje según el tamaño deseado */
+}

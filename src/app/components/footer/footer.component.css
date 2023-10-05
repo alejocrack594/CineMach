@@ -1,0 +1,35 @@
+
+.footer {
+    background-color: #363434;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer .logofoot{
+    width:200px;
+    height: auto;
+    filter: invert(1);
+  }
+  
+  .footer a img {
+   
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+   
+
+  }
+  
+  @media (max-width: 768px) {
+    
+    .card {
+        width: 100%;
+    }
+  
+    .card .btn {
+        width: 100%;
+    }
+  }

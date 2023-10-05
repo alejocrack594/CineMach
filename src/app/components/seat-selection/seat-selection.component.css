@@ -1,0 +1,137 @@
+.fondoBlanco {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tittleBlue label {
+    font-size: 24px;
+    color: #007BFF; /* Color azul típico de Bootstrap, puedes cambiarlo si prefieres otro tono */
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .row.legend {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  
+  .circle.reserved {
+    background-color: #dc3545; /* Rojo */
+  }
+  
+  .circle.available {
+    background-color: #28a745; /* Verde */
+  }
+  
+  .circle.selected {
+    background-color: #007BFF; /* Azul */
+  }
+  
+  .screen-container {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .cinema-screen {
+    display: block;
+  
+  }
+  
+  .allsets {
+    position: relative;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: 500px;
+    height: 500px; /* Cambia a auto ya que no necesitas un alto específico con íconos */
+}
+
+.seat {
+    position: absolute;
+    width: 40px; /* Ancho automático para íconos */
+    height: 40px; /* Altura automática para íconos */
+    text-align: center;
+    margin-bottom: 2px;
+    margin-top: 2px;
+   
+    
+    cursor: pointer;
+}
+
+.seat .material-symbols-outlined {
+    color: #757575; /* Color inicial para los íconos de asientos disponibles */
+    font-size: 22px; /* Puedes ajustar el tamaño del ícono según tus necesidades */
+}
+
+.seat.available .material-symbols-outlined {
+    color: #757575; 
+    /* Color para los íconos de asientos disponibles */
+}
+
+.seat.reserved .material-symbols-outlined{
+    color: #dc3545; /* Color para los íconos de asientos reservados */
+    pointer-events: none; /* Deshabilita clics en íconos de asientos reservados */
+}
+
+.seat.selected .material-symbols-outlined {
+    color: #007BFF; /* Color para los íconos de asientos seleccionados */
+}
+
+.selected-seats-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.selected-seats-list > div {
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #007BFF; /* Color azul brillante */
+  color: #fff; /* Texto blanco */
+  font-weight: bold; /* Texto en negritas */
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para dar profundidad */
+}
+
+.summary {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  font-size: 1.1em; /* Un poco más grande */
+  text-align: left; /* Alineación a la derecha */
+}
+
+.btn-container {
+  text-align: right;  /* Alineación del contenedor del botón a la derecha */
+}
+
+.confirm-btn {
+  display: inline-block; /* Mostrar en línea */
+  background-color: #28a745; /* Color verde */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 1.1em;
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.confirm-btn:hover {
+  background-color: #218838; /* Color verde oscuro al pasar el cursor */
+}

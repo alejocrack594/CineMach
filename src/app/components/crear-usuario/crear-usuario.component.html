@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 mx-auto">
+      <div class="card border shadow rounded-4 my-3">
+        <div class="card-body p-4 p-sm-5">
+          <a class="navbar-brand"><img src="assets/cinelogo.png" alt="CineMach Logo" class="img-center img-small"></a>
+        <hr>
+          <form [formGroup]="creUsuario" (ngSubmit)="insertUsuario()">
+            <div class="form-floating">
+              <div *ngIf="creUsuario.invalid && submitted" class="text-danger">
+                * Todos los campos son obligatorios
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="ced_user" formControlName="ced_user">
+              <label for="ced_user">Número de cédula</label>
+              <div *ngIf="creUsuario.get('ced_user')?.hasError('pattern') && creUsuario.get('ced_user')?.touched" class="text-danger">
+                * La cédula debe tener 10 dígitos.
+              </div>
+              <div *ngIf="creUsuario.get('ced_user')?.hasError('dniDuplicado') && creUsuario.get('ced_user')?.touched" class="text-danger">
+                * Este dni ya existe.
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="nom_com_user" formControlName="nom_com_user" name="nom_com_user">
+              <label for="nom_com_user">Nombre completo</label>
+              <div *ngIf="creUsuario.get('nom_com_user')?.hasError('nameDuplicado') && creUsuario.get('nom_com_user')?.touched" class="text-danger">
+                * Este usuario ya existe.
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="ema_num_user" formControlName="ema_num_user" name="ema_num_user">
+              <label for="ema_num_user">Correo electrónico o número de celular</label>
+              <div *ngIf="creUsuario.get('ema_num_user')?.hasError('pattern') && creUsuario.get('ema_num_user')?.touched" class="text-danger">
+                * Ingresa un correo electrónico
+              </div>
+              <div *ngIf="creUsuario.get('ema_num_user')?.hasError('campoDuplicado') && creUsuario.get('ema_num_user')?.touched" class="text-danger">
+                * Ya existe este correo
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="nom_user" formControlName="nom_user" name="nom_user">
+              <label for="nom_user">Nombre de usuario</label>
+              <div *ngIf="creUsuario.get('nom_user')?.hasError('usernameDuplicado') && creUsuario.get('nom_user')?.touched" class="text-danger">
+                * Este nombre de usuario ya existe.
+              </div>
+            </div>
+            <div class="form-floating mb-1">
+                <input [type]="showPassword ? 'text' : 'password'" class="form-control" id="pass_user" formControlName="pass_user" name="pass_user">
+                <label for="pass_user">Contraseña</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="MostrarClave" (click)="Mostrar()">
+              <label class="form-check-label" for="MostrarClave">
+                Mostrar contraseña
+              </label>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-secondary btn-login text-uppercase fw-bold">
+                Registrar
+              </button>
+            </div>
+            <div class="d-grid">
+              <p class="text-center mt-2">¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesión</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

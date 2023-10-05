@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+<div class="details">
+    <h2>Detalle de compra:</h2>
+    <ul>
+      <li *ngFor="let seat of selectedSeats">Asiento: {{ seat.nom_asi }}</li>
+    </ul>
+    <p>Monto total: {{ totalAmount }}</p>
+  </div>
+  <div class="qr-code">
+    <h2>Código QR:</h2>
+    <qrcode [qrdata]="qrValue" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+</div>
+
+<app-footer></app-footer>

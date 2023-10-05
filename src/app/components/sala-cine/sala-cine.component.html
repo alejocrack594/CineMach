@@ -1,0 +1,32 @@
+<div class="payment-container mt-3">
+    <h2>Confirmar Sala</h2>
+    <div class="payment-form">
+        <!-- Agregar ComboBox para Ciudad -->
+        <label for="city">Ciudad:</label>
+        <select id="card-number" [(ngModel)]="city" id="city">
+            <option selected disabled>Seleccionar</option>
+            <option value="Arenillas">Arenillas</option>
+            <option value="Machala">Machala</option>
+            <option value="Pasaje">Pasaje</option>
+            <option value="Santa Rosa">Santa Rosa</option>
+        </select>
+        
+        <!-- Agregar ComboBox para Complejo -->
+        <label for="complex">Complejo:</label>
+        <select id="card-number" [(ngModel)]="complex" id="complex">
+            <option selected disabled>Seleccionar</option>
+            <option value="Cineworld">Cineworld</option>
+            <option value="Cinépolis">Cinépolis</option>
+            <option value="Golden Village">Golden Village</option>
+            <option value="Kinepolis">Kinepolis</option>
+        </select>
+        
+        <label for="horario">Horario:</label>
+        <select id="card-number" [(ngModel)]="horario" id="horario">
+            <option disabled>Seleccione:</option>
+            <option *ngFor="let sala of salasDisponibles()" [value]="sala.horario">{{ sala.horario | date:'dd/MM/yyyy HH:mm'}}</option>
+        </select>
+        
+        <button type="submit" class="card-number" (click)="GuardarCambios()" routerLink="/seat-selection">Confirma y seguir</button>
+    </div>
+</div>

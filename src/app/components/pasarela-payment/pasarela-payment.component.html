@@ -1,0 +1,27 @@
+<div class="payment-container">
+    <h2>Pasarela de Pagos</h2>
+    <div>
+        <h3>Asientos seleccionados</h3>
+        <ul>
+          <li *ngFor="let seat of selectedSeats">{{ seat.nom_asi }}</li>
+        </ul>
+        <h3>Monto total: ${{totalAmount }}</h3>
+      </div>
+    <div class="payment-form">
+        <label for="card-number">Número de tarjeta:</label>
+        <input type="text" id="card-number" placeholder="1234 5678 9012 3456" #cardInput (input)="detectCardType(cardInput.value)">
+        <i class="fa-brands fa-cc-visa" *ngIf="cardType === 'visa'"></i>
+        <i class="fa-brands fa-cc-mastercard" *ngIf="cardType === 'mastercard'"></i>
+        <i class="fa-brands fa-cc-amex" *ngIf="cardType === 'amex'"></i>
+      <label for="card-name">Nombre en la tarjeta:</label>
+      <input type="text" id="card-number" placeholder="Juan Pérez">
+  
+      <label for="expiry">Fecha de expiración:</label>
+      <input type="text" id="card-number" placeholder="MM/YY">
+
+      <label for="cvc">CVC:</label>
+      <input type="text" id="card-number" placeholder="123">
+      <button (click)="processPayment()">Pagar</button>
+    </div>
+  </div>
+  

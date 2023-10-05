@@ -1,0 +1,58 @@
+<app-navbar></app-navbar>
+<div class="fondoBlanco mb-4">
+  <div class="tittleBlue">
+    <h3 class="text-center">{{titulo}}</h3>
+    <label>Confirma tu orden</label>
+  </div>
+  <div class="row legend">
+    <div class="col-4 legend-item">
+      <div class="circle reserved"></div> Reservados
+    </div>
+    <div class="col-4 legend-item">
+      <div class="circle available"></div> Disponible
+    </div>
+    <div class="col-4 legend-item">
+      <div class="circle selected"></div> Tus asientos
+    </div>
+  </div>
+  <div class="screen-container">
+      <svg class="cinema-screen" viewBox="-70 -15 900 80">
+          <polygon points="50,0 750,0 725,50 75,50" fill="#AAAAAA"></polygon>
+          <text x="400" y="25" text-anchor="middle" fill="#000000" font-size="24">PANTALLA</text>
+      </svg>
+  </div>
+  <div class="allsets">
+      <div *ngFor="let seat of asientos" 
+           class="seat" 
+           [ngClass]="seat.estado" 
+           (click)="selectSeat(seat)" 
+           [style.left.px]="seat.x" 
+           [style.top.px]="seat.y">
+           <span class="material-symbols-outlined">
+              chair
+              </span>
+          {{ seat.nom_asi }}
+      </div>
+  </div>
+</div>
+
+<!-- Nueva sección para mostrar los asientos seleccionados -->
+<div class="fondoBlanco mb-4">
+  <div class="tittleBlue">
+    <label>Tus asientos seleccionados</label>
+  </div>
+  <div class="selected-seats-list">
+      <div *ngFor="let seat of selectedSeats">
+          {{ seat.nom_asi }}
+      </div>
+  </div>
+  <div class="summary">
+    <p><strong>Total asientos seleccionados:</strong> {{ selectedSeats.length }}</p>
+    <p><strong>Precio por entrada:</strong> $8</p>
+    <p><strong>Total a pagar:</strong> ${{ getTotalPrice() }}</p>
+</div>
+<div class="btn-container">
+    <button class="confirm-btn" routerLink="/pasarela-payment">Confirmar Compra</button>
+</div>
+</div>
+<app-footer></app-footer>

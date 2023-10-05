@@ -1,0 +1,41 @@
+.card{
+    margin-top: 18px;
+}
+.card {
+    background-color: #6a6767;
+    color: #fff;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card img {
+    width: 100%;
+    object-fit: cover;
+  }
+  
+
+  
+  .card .btn-primary:hover {
+    background-color: #ca9c03;
+  }
+  
+  .card .btn-secondary {
+    background-color: #555;
+    color: #fff;
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .card .btn-secondary:hover {
+    background-color: #777;
+  }
+  
+  .card-text {
+    color: #fff;
+  }

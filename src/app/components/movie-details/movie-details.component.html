@@ -1,0 +1,13 @@
+<div *ngIf="movie" class="movie-details">
+    <img [src]="movie.image" alt="{{ movie.title }}">
+    <div class="movie-details-content">
+      <h1>{{ movie.title }}</h1>
+      <p>{{ movie.description }}</p>
+      <p><small class="text-muted">{{ movie.duration }} | {{ movie.rating }}</small></p>
+    </div>
+    <div class="back-button">
+        <a routerLink="/homepage" class="btn btn-primary">Volver</a>
+      </div>
+  </div>
+  
+

@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+<div class="user-profile mt-5 mb-5">
+    <h1>Mi Perfil</h1>
+    <div class="user-info">
+      <p><strong>Nombre:</strong> {{ usuario.nom_com_user }}</p>
+      <p><strong>Correo electrónico:</strong> {{ usuario.ema_num_user }}</p>
+      <p><strong>Cedula:</strong> {{ usuario.ced_user}}</p>
+      <!-- Otros detalles del perfil del usuario -->
+    </div>
+    <div class="user-settings">
+      <h3>Historial de Compras</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Película</th>
+            <th>Fecha</th>
+            <th>Asientos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let purchase of filtrado()">
+            <td>{{ purchase.nom_peli }}</td>
+            <td>{{ purchase.fecha | date: 'dd/MM/yyyy'}}</td>
+            <td>
+              <span *ngFor="let asiento of purchase.asientos; let last = last">
+                {{ asiento.nom_asi }}{{ last ? '' : ', ' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Configuración</h2>
+      <a type="submit" class="btn btn-primary" (click)="Liberar()">Cerrar Sesion</a>
+    </div>
+  </div>
+  <app-footer></app-footer>
